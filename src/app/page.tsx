@@ -1,11 +1,10 @@
-import Container from "@/utils/Container";
+import Hero from "@/components/home/Hero";
 
 export default function Home() {
   return (
     <div>
-         <Container>
-          Home
-         </Container>
+          <Hero/>
+         
     </div>
   );
 }
