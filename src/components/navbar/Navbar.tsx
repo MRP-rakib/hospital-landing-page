@@ -30,11 +30,11 @@ const [scrolled, setScrolled] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-<nav className={`py-6 fixed bg-transparent ${scrolled&&'bg-white'} top-0 left-0 z-50 w-full`}>
+<nav className={`py-6 sticky bg-transparent ${scrolled&&'bg-white'} top-0 left-0 z-50 w-full`}>
         <Container>
             <div className='flex items-center justify-between'>
                 <Image src='/logo-dark.png' width={120} height={64} alt='logo'/>
-                <ul className={`hidden lg:flex items-center gap-10 lg:text-base ${scrolled?'text-black':'text-white'}`}>
+                <ul className={`hidden lg:flex items-center gap-10 lg:text-base text-black} `}>
                     <li>
                         <Link href='/'>Home</Link>
                     </li>

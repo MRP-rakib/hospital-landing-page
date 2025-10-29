@@ -16,7 +16,7 @@ function ProfileView() {
     const avatarSrc = user.avatar || '/image/profile.jpg'
 
     return (
-        <div className="py-6 fixed top-0 left-0 w-full bg-white z-50">
+        <div className="">
             <Container>
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800">Profile</h1>

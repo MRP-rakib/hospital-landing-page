@@ -7,7 +7,7 @@ interface profileProps {
 }
 
 function Profile({ className }: profileProps) {
-  const token = localStorage.getItem('token')
+
   return (
     <div className={`${className} absolute opacity-0 invisible top-20 right-0 transition-all duration-300 lg:-left-[200px] w-64 bg-white shadow-lg rounded-xl border-gray-100 overflow-hidden`}>
       {/* Profile Header */}
@@ -38,12 +38,12 @@ function Profile({ className }: profileProps) {
           Profile Settings
         </li>
         </Link>
-        {!token&&
+      
          <Link href='/signin'>
          <li  className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 ">
             <LogIn size={16} />
             Sign In
-          </li></Link>}
+          </li></Link>
         <li className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-100 cursor-pointer text-sm text-gray-700 ">
           <LogOut size={16} />
           Logout
