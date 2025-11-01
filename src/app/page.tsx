@@ -1,7 +1,8 @@
+import DoctorsSection from "@/components/doctors/DoctorsSection";
 import About from "@/components/home/About";
 import DoctorAboutSection from "@/components/home/DoctorAboutsection";
 import Hero from "@/components/home/Hero";
-import Department from '@/components/home/Department'
+import MedicalServicesSection from '@/components/home/MedicalServicesSection'
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
           <Hero/>
          <About/>
          <DoctorAboutSection/>
-         <Department/>
+         <MedicalServicesSection/>
+         <DoctorsSection/>
     </div>
   );
 }

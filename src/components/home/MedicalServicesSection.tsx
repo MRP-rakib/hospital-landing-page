@@ -49,19 +49,17 @@ export default function MedicalServicesSection() {
   return (
     <section className="py-20 bg-white text-center">
       <Container>
-        {/* Header */}
         <div className="mb-16">
           <span className="bg-blue-100 text-blue-700 text-sm font-medium px-4 py-1 rounded-full">
             Departments
           </span>
-          <h2 className="mt-4 text-3xl font-bold text-gray-900">Our Medical Services</h2>
+          <h2 className="mt-4 text-[20px] lg:text-2xl font-bold text-gray-900">Our Medical Services</h2>
           <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
             Great doctor if you need your family member to get effective immediate assistance,
             emergency treatment or a simple consultation.
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {services.map((item, index) => (
             <div

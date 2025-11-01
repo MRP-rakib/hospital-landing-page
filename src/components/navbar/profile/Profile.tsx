@@ -10,7 +10,6 @@ function Profile({ className }: profileProps) {
 
   return (
     <div className={`${className} absolute opacity-0 invisible top-20 right-0 transition-all duration-300 lg:-left-[200px] w-64 bg-white shadow-lg rounded-xl border-gray-100 overflow-hidden`}>
-      {/* Profile Header */}
       <div className="flex items-start gap-2 p-4 border-b border-gray-200 overflow-hidden ">
         <div className='w-10 h-10 border overflow-hidden rounded-full'>
           <Image
@@ -29,7 +28,6 @@ function Profile({ className }: profileProps) {
         </div>
       </div>
 
-      {/* Menu Items */}
       <ul className="p-2">
 
         <Link href='/profile'>

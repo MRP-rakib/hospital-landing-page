@@ -39,19 +39,19 @@ const [scrolled, setScrolled] = useState(false);
                         <Link href='/'>Home</Link>
                     </li>
                     <li>
-                        <Link href='/'>Doctros</Link>
+                        <Link href='/doctors'>Doctros</Link>
                     </li>
                     <li>
-                        <Link href='/'>Shop</Link>
+                        <Link href='/shop'>Shop</Link>
                     </li>
                     <li>
-                        <Link href='/'>Appointment</Link>
+                        <Link href='/appointment'>Appointment</Link>
                     </li>
                     <li>
-                        <Link href='/'>Blogs</Link>
+                        <Link href='/blogs'>Blogs</Link>
                     </li>
                     <li>
-                        <Link href='/'>About us</Link>
+                        <Link href='/about'>About us</Link>
                     </li>
                 </ul>
                 <div className='flex items-center gap-4 lg:gap-8'>
@@ -96,19 +96,19 @@ function MobileView({mobile,setMobile}:mobilePropsType){
                         <Link href='/'>Home</Link>
                     </li>
                     <li className='px-4 py-2 border-b border-gray-200'>
-                        <Link href='/'>Doctros</Link>
+                        <Link href='/doctors'>Doctros</Link>
                     </li>
                     <li className='px-4 py-2 border-b border-gray-200'>
-                        <Link href='/'>Shop</Link>
+                        <Link href='/shop'>Shop</Link>
                     </li>
                     <li className='px-4 py-2 border-b border-gray-200'>
-                        <Link href='/'>Appointment</Link>
+                        <Link href='/appointment'>Appointment</Link>
                     </li>
                     <li className='px-4 py-2 border-b border-gray-200'>
-                        <Link href='/'>Blogs</Link>
+                        <Link href='/blogs'>Blogs</Link>
                     </li>
                     <li className='px-4 py-2 border-b border-gray-200'>
-                        <Link href='/'>About us</Link>
+                        <Link href='/about'>About us</Link>
                     </li>
                    
                 </ul>
