@@ -7,15 +7,18 @@ import { IoIosSearch } from "react-icons/io";
 import { CiShoppingCart } from "react-icons/ci";
 import { MdMenu } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
-import Profile from './profile/Profile'
+import Profile from '../Profile/profile/Profile'
+import { usePathname } from 'next/navigation'
 interface mobilePropsType{
     mobile:boolean
     setMobile:React.Dispatch<React.SetStateAction<boolean>>
+    pathname:string
    
 }
 function Navbar() {
     const [mobile,setMobile] =useState<boolean>(false)
 const [scrolled, setScrolled] = useState(false);
+const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,22 +38,22 @@ const [scrolled, setScrolled] = useState(false);
             <div className='flex items-center justify-between'>
                 <Image src='/logo-dark.png' width={120} height={64} alt='logo'/>
                 <ul className={`hidden lg:flex items-center gap-10 lg:text-base text-black} `}>
-                    <li>
+                    <li className={`${pathname==='/'&&'text-[#396CF0]'}`}>
                         <Link href='/'>Home</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname==='/doctors'&&'text-[#396CF0]'}`}>
                         <Link href='/doctors'>Doctros</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname==='/shop'&&'text-[#396CF0]'}`}>
                         <Link href='/shop'>Shop</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname==='/appointment'&&'text-[#396CF0]'}`}>
                         <Link href='/appointment'>Appointment</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname==='/blogs'&&'text-[#396CF0]'}`}>
                         <Link href='/blogs'>Blogs</Link>
                     </li>
-                    <li>
+                    <li className={`${pathname==='/about'&&'text-[#396CF0]'}`}>
                         <Link href='/about'>About us</Link>
                     </li>
                 </ul>
@@ -75,12 +78,12 @@ const [scrolled, setScrolled] = useState(false);
                 
             </div>
         </Container>
-        <MobileView mobile={mobile} setMobile={setMobile}/>
+        <MobileView mobile={mobile} setMobile={setMobile} pathname={pathname}/>
     </nav>
   )
 }
 
-function MobileView({mobile,setMobile}:mobilePropsType){
+function MobileView({mobile,setMobile,pathname}:mobilePropsType){
     return(
         <div className={`${mobile?"w-full":"w-0"} absolute top-0 transition-all duration-600 bg-[rgba(0,0,0,0.2)] overflow-hidden`}>
             <div className='lg:hidden bg-white overflow-y-scroll   flex flex-col gap-2 lg:text-base w-[250px] h-screen md:w-[300px]
@@ -92,22 +95,22 @@ function MobileView({mobile,setMobile}:mobilePropsType){
                     </span>
                 </div>
            <ul className=' flex flex-col'>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/'>Home</Link>
                     </li>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/doctros'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/doctors'>Doctros</Link>
                     </li>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/shop'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/shop'>Shop</Link>
                     </li>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/appointment'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/appointment'>Appointment</Link>
                     </li>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/blogs'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/blogs'>Blogs</Link>
                     </li>
-                    <li className='px-4 py-2 border-b border-gray-200'>
+                    <li className={`${pathname==='/about'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/about'>About us</Link>
                     </li>
                    
