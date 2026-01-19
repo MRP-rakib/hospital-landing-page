@@ -3,12 +3,11 @@ import Container from '@/utils/Container'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { IoIosSearch } from "react-icons/io";
-import { CiShoppingCart } from "react-icons/ci";
 import { MdMenu } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
-import Profile from '../Profile/profile/Profile'
+import ProfileNav from '../Profile/ProfileNav'
 import { usePathname } from 'next/navigation'
+import { Heart, ShoppingCart } from 'lucide-react'
 interface mobilePropsType{
     mobile:boolean
     setMobile:React.Dispatch<React.SetStateAction<boolean>>
@@ -50,26 +49,23 @@ const pathname = usePathname()
                     <li className={`${pathname==='/appointment'&&'text-[#396CF0]'}`}>
                         <Link href='/appointment'>Appointment</Link>
                     </li>
-                    <li className={`${pathname==='/blogs'&&'text-[#396CF0]'}`}>
-                        <Link href='/blogs'>Blogs</Link>
-                    </li>
                     <li className={`${pathname==='/about'&&'text-[#396CF0]'}`}>
                         <Link href='/about'>About us</Link>
                     </li>
                 </ul>
                 <div className='flex items-center gap-4 lg:gap-8'>
                     <span className='w-6 h-6 lg:w-10 lg:h-10 rounded-full flex items-center justify-center bg-primary text-white'>
-                        <IoIosSearch />
+                        <Heart/>
                     </span>
                     <span className='w-6 h-6 lg:w-10 lg:h-10 rounded-full flex items-center justify-center bg-primary text-white'>
-                        <CiShoppingCart />
+                        <ShoppingCart />
                     </span>
                 
                     <div className=' relative group'>
                         <span className='w-6 h-6 lg:w-10 lg:h-10 rounded-full flex items-center justify-center overflow-hidden cursor-pointer'>
                           <Image src='/profile.jpg' width={40} height={40} alt='profile' className=' object-center'/>
                     </span>
-                    <Profile className='group-hover:opacity-100 group-hover:visible group-hover:top-12 group-focus:opacity-100 group-focus:visible group-focus:top-12'/>
+                    <ProfileNav className='group-hover:opacity-100 group-hover:visible group-hover:top-12 group-focus:opacity-100 group-focus:visible group-focus:top-12'/>
                     </div>
                     <span onClick={()=>setMobile(true)} className='w-6 h-6 lg:hidden rounded-full flex items-center justify-center bg-primary text-white'>
                         <MdMenu />
@@ -106,9 +102,6 @@ function MobileView({mobile,setMobile,pathname}:mobilePropsType){
                     </li>
                     <li className={`${pathname==='/appointment'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/appointment'>Appointment</Link>
-                    </li>
-                    <li className={`${pathname==='/blogs'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
-                        <Link href='/blogs'>Blogs</Link>
                     </li>
                     <li className={`${pathname==='/about'&&'text-[#396CF0]'} px-4 py-2 border-b border-gray-200`}>
                         <Link href='/about'>About us</Link>
