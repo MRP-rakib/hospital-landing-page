@@ -84,7 +84,7 @@ function ProfileTab() {
           <h5 className='text-[18px] lg:text-[20px] font-semibold'>Appointment List</h5>
           <div className='flex flex-col gap-2'>
             {departmentData.map(department => (
-              <div key={department.id} className='py-2 px-2 flex items-end justify-between'>
+              <div key={department.id} className='py-2 px-2 flex items-end justify-between border border-gray-200 rounded'>
                 <div className='flex items-center gap-2 '>
                   <span >{department.icon}</span>
                   <div>
@@ -102,7 +102,7 @@ function ProfileTab() {
           <h5 className='text-[18px] lg:text-[20px] font-semibold'>Payment List</h5>
           <div className='flex flex-col gap-2'>
             {departmentData.map(department => (
-              <div key={department.id} className='py-2 px-2 flex items-center justify-between'>
+              <div key={department.id} className='py-2 px-2 flex items-center justify-between border border-gray-200 rounded'>
                 <div>
                   <h6 className='text-[14px]  lg:text-base font-semibold'>{department.department}</h6>
                   <p className='text-gray-400 text-[14px] capitalize'>Full bill paid</p>

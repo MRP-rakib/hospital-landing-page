@@ -55,10 +55,10 @@ const pathname = usePathname()
                 </ul>
                 <div className='flex items-center gap-4 lg:gap-8'>
                     <span className='w-6 h-6 lg:w-10 lg:h-10 rounded-full flex items-center justify-center bg-primary text-white'>
-                        <Heart/>
+                        <Heart size={16}/>
                     </span>
                     <span className='w-6 h-6 lg:w-10 lg:h-10 rounded-full flex items-center justify-center bg-primary text-white'>
-                        <ShoppingCart />
+                        <ShoppingCart size={16} />
                     </span>
                 
                     <div className=' relative group'>
