@@ -1,5 +1,5 @@
 'use client'
-import { clearMessage, signinThunk } from '@/redux/auth/signinSlice'
+import { clearMessageSigin, signinThunk } from '@/redux/auth/signinSlice'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import FacebookBtn from '@/utils/FacebookBtn'
 import FormButton from '@/utils/FormButton'
@@ -37,14 +37,19 @@ function SignIn() {
     }
 
     useEffect(()=>{
+        let timer:ReturnType<typeof setTimeout> | undefined;
        if(signin.message){
           setForm({
             email:'',
             password:''
           })
-          dispatch(clearMessage())
-          router.push('/')
+          timer=setTimeout(() => {
+            router.push('/')
+          dispatch(clearMessageSigin())
+          }, 1000);
+          
        }
+       return ()=>clearTimeout(timer)
     },[signin,dispatch,router])
 
     return (

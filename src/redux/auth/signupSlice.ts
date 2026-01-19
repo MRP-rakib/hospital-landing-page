@@ -2,10 +2,10 @@ import { API } from "@/api/API";
 import { authType } from "@/types/authTypes";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const signupThunk = createAsyncThunk('auth/user/signup',async(formData:authType)=>{
+export const signupThunk = createAsyncThunk('auth/user/register',async(formData:authType)=>{
         try {
           const  data = await API({
-                endpoint:'auth/user/signup',
+                endpoint:'auth/user/register',
                 option:{
                     method:'POST',
                     headers:{'content-type':'application/json',},
@@ -36,7 +36,7 @@ const signupSlice = createSlice({
     name:'signup',
     initialState,
     reducers:{
-        clearMessage:state=>{state.message=null}
+        clearMessageSignup:state=>{state.message=null}
     },
     extraReducers:builder=>{
         builder.addCase(signupThunk.pending,state=>{state.loading=true})
@@ -45,6 +45,6 @@ const signupSlice = createSlice({
     }
 })
 
-export const {clearMessage} = signupSlice.actions
+export const {clearMessageSignup} = signupSlice.actions
 
 export default signupSlice.reducer
