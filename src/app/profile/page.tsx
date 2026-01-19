@@ -16,9 +16,9 @@ function Profile() {
         { label: "Blood Group", value: "B +", icon: <Droplets size={20} className="text-blue-600" /> },
     ]);
     return (
-        <section className="m-5">
+        <section className="my-10">
             <Container>
-                <div className="grid grid-cols-[400px_1fr] gap-7.5">
+                <div className="grid grid-cols-[400px_1fr] gap-7.5 h-[600px]">
                     <div className="w-full border border-gray-300 rounded">
                         <div className="w-full h-[100px] relative">
                             <Image src={'/bg-profile.jpg'} width={300} height={400} alt="banner" className="w-full h-full object-cover rounded" />
@@ -56,14 +56,12 @@ function Profile() {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className=" h-full overflow-y-auto">
                         <div className="flex items-center justify-between font-medium">
                             <button onClick={()=>setProfile(true)} className={`w-full h-15 text-2xl ${isProfile?'text-white bg-[#396CF0]':'text-black bg-[#F8F9FA]'}   cursor-pointer`}>Profile</button>
                             <button onClick={()=>setProfile(false)} className={`w-full h-15 text-2xl ${isProfile?'text-black bg-[#F8F9FA]':'text-white bg-[#396CF0]'}  cursor-pointer`}>Profile Settings</button>
                         </div>
                         {isProfile?(<ProfileTab/>):(<ProfileSettings/>)}
-                        
-                        
                     </div>
                 </div>
             </Container>
